@@ -1,0 +1,43 @@
+{
+	"contracts": {
+		"ConservationNFT": "./cadence/contracts/ConservationNFT.cdc",
+		"NonFungibleToken": {
+			"source": "./contracts/NonFungibleToken.cdc",
+			"aliases": {
+				"testnet": "0x631e88ae7f1d7c20"
+			}
+		}
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testing": "127.0.0.1:3569",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": {
+				"type": "file",
+				"location": "emulator-account.pkey"
+			}
+		},
+		"testnet-account": {
+			"address": "0x160190b4e00979c7",
+			"key": {
+				"type": "hex",
+				"index": 0,
+				"signatureAlgorithm": "ECDSA_P256",
+				"hashAlgorithm": "SHA3_256",
+				"privateKey": "$FLOW_PRIVATE_KEY"
+			}
+		}
+	},
+	"deployments": {
+		"testnet": {
+			"testnet-account": [
+				"ConservationNFT"
+			]
+		}
+	}
+}
